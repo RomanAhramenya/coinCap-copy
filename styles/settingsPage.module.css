@@ -29,7 +29,7 @@
 }
 .row_select{
     position: relative;
-    margin-bottom: 0;
+    margin-bottom: 2em;
 }
 .select{
     position: absolute;

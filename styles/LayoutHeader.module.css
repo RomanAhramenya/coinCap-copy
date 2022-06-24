@@ -162,6 +162,10 @@
     align-items: center;
     margin: 1em 2em;
   }
+   .logo {
+    width: 50px;
+    
+  }
   .fullScreen{
     display: none;
   }
@@ -172,7 +176,7 @@
   left: 0;
   bottom: 0;
   background-color: bl;
-  animation :menu 0.2s linear
+  animation :menu 0.2s linear;
 }
 @keyframes menu {
   0%{left: -20em;}

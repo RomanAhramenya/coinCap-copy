@@ -47,14 +47,6 @@ const SettingsPage = ({settings}) => {
       <Select settings={settings}/>
       <div className={s.row}>
         <div>
-
-        </div>
-        <div>
-
-        </div>
-      </div>
-      <div className={s.row}>
-        <div>
           {translate(settings.language,'Language','Язык')}
         </div>
         <div>

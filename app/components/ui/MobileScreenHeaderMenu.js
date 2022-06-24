@@ -20,6 +20,7 @@ import MobileScreenMenuItem from "./MobileScreenMenu-item";
 const MobileScreenHeaderMenu = ({ settings }) => {
   const tooltipRef = useRef(null);
   const [isMenu, setIsMenu] = useState(false);
+  const [isSetting,setIsSetting] = useState(true)
   const handlerClick = () => {
     setIsMenu(false);
   };
