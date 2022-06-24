@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { translate } from '../../assets/helpers/settings'
 import { setIsSetting } from '../../store/slice/settingsSlice'
 
-import s from './../../../styles/LayoutHeader.module.css'
+import s from './../../../styles/LayoutHeader.module.scss'
 const MobileScreenMenuItem = ({href,worldEn,worldRu,imageDark,image,alt}) => {
     const settings = useSelector(state => state.settings)
     const isDark = settings.isThemeDark

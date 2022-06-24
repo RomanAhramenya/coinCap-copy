@@ -10,7 +10,7 @@ import apiDark from "./../../assets/image/apiDark.png";
 import setting from "./../../assets/image/settings.png";
 import settingDark from "./../../assets/image/settingsBlack.png";
 import { translate } from "../../assets/helpers/settings";
-import s from "./../../../styles/LayoutHeader.module.css";
+import s from "./../../../styles/LayoutHeader.module.scss";
 import React, { useRef, useState } from "react";
 import { useOutSideClick } from "../../hooks/useOutSideClick";
 import imageMenu from "./../../assets/image/menu.png";

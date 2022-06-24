@@ -1,5 +1,5 @@
 
-import s from "./../../../styles/LayoutHeader.module.css";
+import s from "./../../../styles/LayoutHeader.module.scss";
 import Image from 'next/image';
 import imageBlack from "./../../assets/image/black.svg";
 import imageWhite from "./../../assets/image/white.svg";

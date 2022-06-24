@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import s from "./../../../../styles/settingsPage.module.css";
+import s from "./../../../../styles/settingsPage.module.scss";
 import usaImage from "./../../../assets/image/usa.png";
 import belImage from "./../../../assets/image/bel.png";
 import rusImage from "./../../../assets/image/rus.png";

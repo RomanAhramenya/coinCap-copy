@@ -1,3 +1,4 @@
+
 .container,.containerDark {
   position: fixed;
   left: 0;
@@ -11,16 +12,26 @@
   color: white ;
 }
 .fullScreen {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 .links a {
   padding: 1.5em 1.15em;
   font-weight: 400;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
   transition: all 0.2s;
 }
 .links a:hover {
@@ -34,13 +45,21 @@
   height: auto ;
 }
 .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .menu_item:nth-child(1),
 .menu_item:nth-child(2) {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-right: 3rem;
 }
 .menu_item:nth-child(2) {
@@ -49,8 +68,13 @@
 .menu_item button {
   position: relative;
   top: 0;
+  -webkit-transition: -webkit-transform 0.2s ease 0s;
+  transition: -webkit-transform 0.2s ease 0s;
+  -o-transition: transform 0.2s ease 0s;
   transition: transform 0.2s ease 0s;
-  box-shadow: rgb(0 0 0 / 40%) 0px 2px 15px -3px;
+  transition: transform 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
+  -webkit-box-shadow: rgb(0 0 0 / 40%) 0px 2px 15px -3px;
+          box-shadow: rgb(0 0 0 / 40%) 0px 2px 15px -3px;
   background: rgb(24, 198, 131) !important;
   color: white;
   padding: 0.8em 1.5em;
@@ -67,8 +91,12 @@
 }
 .pos_relative {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .inputNone {
@@ -77,10 +105,21 @@
   opacity: 0;
 }
 .inputBlock {
-  animation: inputBlock 0.2s linear;
+  -webkit-animation: inputBlock 0.2s linear;
+          animation: inputBlock 0.2s linear;
   width: 13em;
   opacity: 1;
   margin-right: 0.5rem;
+}
+@-webkit-keyframes inputBlock {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 13em;
+    opacity: 1;
+  }
 }
 @keyframes inputBlock {
   0% {
@@ -113,7 +152,9 @@
 }
 
 .menu_item button:hover {
-  transform: translateY(-2px);
+  -webkit-transform: translateY(-2px);
+      -ms-transform: translateY(-2px);
+          transform: translateY(-2px);
 }
 
 .mobileScreen{
@@ -137,10 +178,21 @@
     margin: 0 auto;
   }
   .inputBlock {
-    animation: inputBlockMedia 0.2s linear;
+    -webkit-animation: inputBlockMedia 0.2s linear;
+            animation: inputBlockMedia 0.2s linear;
     width: 10em ;
     opacity: 1;
     margin-right: 0.5rem;
+  }
+}
+@-webkit-keyframes inputBlockMedia {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 10em;
+    opacity: 1;
   }
 }
 @keyframes inputBlockMedia {
@@ -157,9 +209,15 @@
   .mobileScreen{
     position: relative;
     display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: 1em 2em;
   }
    .logo {
@@ -176,7 +234,12 @@
   left: 0;
   bottom: 0;
   background-color: bl;
-  animation :menu 0.2s linear;
+  -webkit-animation :menu 0.2s linear;
+          animation :menu 0.2s linear;
+}
+@-webkit-keyframes menu {
+  0%{left: -20em;}
+  100%{left: 0;}
 }
 @keyframes menu {
   0%{left: -20em;}

@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useOutSideClick } from "../../../hooks/useOutSideClick";
-import s from './../../../../styles/LayoutHeader.module.css'
+import s from './../../../../styles/LayoutHeader.module.scss'
 import search from './../../../assets/image/search.png'
 import searchBlack from './../../../assets/image/searchBlack.png'
 export const SearchHeader = ({settings}) => {
