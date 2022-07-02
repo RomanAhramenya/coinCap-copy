@@ -6,7 +6,7 @@ import { getMarkets, getStatistics } from "../../../store/slice/getCoinsSlice";
 import { wrapper } from "../../../store/store";
 import s from "./../../../../styles/mainStatisticsHeader.module.scss";
 import MainStatisticsHeaderItem from "./MainStatisticsHeaderItem";
-const MainStatisticsHeader = ({ language, isThemeDark, currency }) => {
+export const MainStatisticsHeader = ({ language, isThemeDark, currency }) => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.coins);
   const [isStatistics, setIsStatistic] = useState(false);
@@ -148,6 +148,5 @@ const MainStatisticsHeader = ({ language, isThemeDark, currency }) => {
   );
 };
 
-export default MainStatisticsHeader;
 
 

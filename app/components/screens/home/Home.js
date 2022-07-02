@@ -3,8 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 
 
 import { Layout } from '../../layout/Layout'
-import MainStatisticsHeader from '../../ui/mainStatisticsHeader/mainStatisticsHeader'
+
 import { Tablecoins } from '../../ui/tableCoins/Tablecoins';
+import {MainStatisticsHeader} from '../../ui/mainStatisticsHeader/mainStatisticsHeader'
 
 export const Home = () => {
 	const isThemeDark = useSelector(state => state.settings.isThemeDark)
