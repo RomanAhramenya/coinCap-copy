@@ -8,6 +8,7 @@ import SettingsUi from "./ui/settingsUi/SettingsUi";
 import { translate } from "../assets/helpers/settings";
 import { useDispatch } from "react-redux";
 import MobileScreenHeader from "./ui/MobileScreenHeader";
+import { Button } from "./ui/Button";
 export const Header = ({settings}) => {
    
   return (
@@ -42,9 +43,7 @@ export const Header = ({settings}) => {
         <div className={s.menu}>
             <SearchHeader settings={settings.isThemeDark}/>
             <SettingsUi  settings={settings.isThemeDark}/>
-          <div className={s.menu_item}>
-            <button>{translate(settings.language,'Connect Wallet' , 'Подключить кошелек')}</button>
-          </div>
+            <Button en='Connect Wallet' ru='Подключить кошелек'/>
         </div>
       </div>
     </div>

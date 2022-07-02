@@ -1,0 +1,178 @@
+@media only screen and (min-width: 1200px) {
+  .container,
+  .containerDark {
+    width: 1127px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+
+.container,
+.containerDark {
+  white-space: nowrap;
+ position: relative;
+ top:-140px;
+  table {
+    border-collapse: collapse;
+    line-height: 4;
+    thead {
+      vertical-align: middle;
+      th {
+        border-bottom: 1px solid rgba(34, 36, 38, 0.1);
+        font-weight: 400;
+        color: rgba(0, 0, 0, 0.7);
+        font-size: 0.9em;
+        &:first-child {
+          color: rgba(0, 0, 0);
+        }
+        &:last-child {
+          padding-right: 1em;
+        }
+      }
+    }
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    box-shadow: rgb(0 0 0 / 40%) 0px 2px 15px -3px !important;
+    background-color: white;
+    tbody {
+      tr {
+        transition: all 0.2s;
+        &:hover {
+          background: rgba(0, 0, 0, 0.05) !important;
+          color: rgba(0, 0, 0, 0.95) !important;
+        }
+        td {
+          border-bottom: 1px solid rgba(34, 36, 38, 0.1);
+          &:last-child {
+            padding-right: 1em;
+          }
+        }
+      }
+    }
+
+    .rigth_align {
+      text-align: right !important;
+    }
+    .left_align {
+      text-align: left !important;
+      .flex {
+        display: flex;
+        align-items: center;
+        line-height: 1.4;
+        .iconCoin {
+          width: 30px;
+          height: 30px;
+          margin-right: 0.5em;
+        }
+        .nameCoin {
+          transition: all 0.2s;
+          &:hover {
+            text-decoration: underline;
+          }
+          div {
+            &:last-child {
+              color: rgba(0, 0, 0, 0.7);
+              font-size: 0.8em;
+            }
+          }
+        }
+      }
+    }
+    .center_align {
+      text-align: center !important;
+    }
+  }
+  .button_main {
+    text-align: center;
+    margin: 2em auto;
+  }
+}
+.containerDark {
+  table {
+    thead {
+      th {
+        border-bottom: 1px solid black;
+        background-color: black;
+        color: rgba(255, 255, 255, 0.7);
+        &:first-child {
+          color: white;
+        }
+      }
+    }
+    tbody {
+        background: rgb(54, 54, 54);
+      tr {
+        td{
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3); 
+        }
+        transition: all 0.2s;
+        color:white;
+        &:hover {
+          background-color: rgb(37, 37, 39) !important;
+          color:white !important;
+        }
+      }
+      .nameCoin {
+        
+        div {
+          &:last-child {
+            color: rgba(255, 255, 255, 0.39) !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+  .container,
+  .containerDark {
+    width: 933px;
+    margin-left: auto!important;
+    margin-right: auto!important;
+}
+}
+@media only screen and (min-width: 768px) and (max-width: 991px){
+  .container,
+  .containerDark {
+    width: 933px;
+    margin-left: auto!important;
+    margin-right: auto!important;
+}
+}
+@media  (max-width: 768px){
+  .container,
+  .containerDark {
+    top: 0 !important;
+    width: auto !important;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    thead{
+      tr{
+        th{
+          &:nth-child(1),&:nth-child(4),&:nth-child(5),&:nth-child(6),&:nth-child(7){
+            display: none;
+          }
+          &:nth-child(2){
+            padding-left: 1em;
+          }
+        }
+      }
+    }
+    tbody{
+      tr{
+        td{
+          &:nth-child(1),&:nth-child(4),&:nth-child(5),&:nth-child(6),&:nth-child(7){
+            display: none;
+          }
+          &:nth-child(2){
+            padding-left: 1em;
+          }
+        }
+      }
+    }
+}
+
+}

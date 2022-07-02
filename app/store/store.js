@@ -1,15 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { createWrapper } from 'next-redux-wrapper';
 import settingsReducer from "./slice/settingsSlice";
 import coinsReducer from './slice/getCoinsSlice'
 
-export let store = null;
-export default function getStore(incomingPreloadState) {
-    store = configureStore({
+const makeStore = () =>  configureStore({
         reducer:{
             settings: settingsReducer,
             coins:coinsReducer
          },
-         preloadedState: incomingPreloadState,
+         devTools: true
     });
-    return store;
-  }
+    export const store = makeStore()
+    
+    export const wrapper = createWrapper(makeStore);

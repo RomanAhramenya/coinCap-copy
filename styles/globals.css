@@ -5,14 +5,12 @@ body {
   font-family: Lato, Helvetica, Arial, sans-serif;
   background: rgb(255, 255, 255);
   font-size: 14px;
-    line-height: 1.4285em;
-    color: rgba(0,0,0,.87);
+  line-height: 1.4285em;
+  color: rgba(0, 0, 0, 0.87);
 }
-.hidden{
+.hidden {
   overflow: hidden;
-  
 }
-
 
 a {
   color: inherit;
@@ -21,4 +19,10 @@ a {
 
 * {
   box-sizing: border-box;
+}
+.change_green {
+  color: green;
+}
+.change_red {
+  color: red;
 }

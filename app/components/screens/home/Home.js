@@ -1,37 +1,23 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { getCoins } from '../../../store/slice/getCoinsAction'
-import { Layout } from '../../layout/Layout'
-import getStore from './../../../store/store'
-export const Home = () => {
-	const dispatch = useDispatch();
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-  const coins = useSelector(state => state.coins);
-	useEffect(()=>{
-		dispatch(getCoins())
-		console.log('efect')
-	},[])
-	console.log(coins.coins)
+
+import { Layout } from '../../layout/Layout'
+import MainStatisticsHeader from '../../ui/mainStatisticsHeader/mainStatisticsHeader'
+import { Tablecoins } from '../../ui/tableCoins/Tablecoins';
+
+export const Home = () => {
+	const isThemeDark = useSelector(state => state.settings.isThemeDark)
+	const language = useSelector(state => state.settings.language)
+	const currency = useSelector(state => state.settings.currency)
+
   return (
     <Layout title='Reliable Cryptocurrency Prices and Market Capitalizations'>
-      <ul>
-		 {/* {  coins.map(coin=>{
-		return <li>{coin}</li>
-	   })} */}
-	  </ul>
-	  
+      <MainStatisticsHeader currency={currency} isThemeDark={isThemeDark} language={language}/>
+	  <Tablecoins  currency={currency} isThemeDark={isThemeDark} language={language}/>
     </Layout>
   )
 }
 
-// export async function getServerSideProps() {
-// const store = getStore()
-// 	console.log(store)
-// 	await store.dispatch(getCoins())
-// 	return {
-// 	  props: {
-// 		initialState: store,
-// 	  },
-// 	};
-//   }
+
+
