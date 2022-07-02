@@ -149,7 +149,9 @@
     width: auto !important;
     margin-left: auto!important;
     margin-right: auto!important;
+    
     thead{
+      
       tr{
         th{
           &:nth-child(1),&:nth-child(4),&:nth-child(5),&:nth-child(6),&:nth-child(7){
