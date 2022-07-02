@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 
 
 import { Layout } from '../../layout/Layout'
-
+import {MainStatisticsHeader} from '../../ui/mainStatisticsHeader/MainStatisticsHeader';
 import { Tablecoins } from '../../ui/tableCoins/Tablecoins';
-// import MainStatisticsHeader from '../../ui/mainStatisticsHeader/mainStatisticsHeader'
+
 
 export const Home = () => {
 	const isThemeDark = useSelector(state => state.settings.isThemeDark)
@@ -14,8 +14,7 @@ export const Home = () => {
 
   return (
     <Layout title='Reliable Cryptocurrency Prices and Market Capitalizations'>
-    sdfsdf
-      {/* <MainStatisticsHeader currency={currency} isThemeDark={isThemeDark} language={language}/> */}
+      <MainStatisticsHeader currency={currency} isThemeDark={isThemeDark} language={language}/>
 	  <Tablecoins  currency={currency} isThemeDark={isThemeDark} language={language}/>
     </Layout>
   )
