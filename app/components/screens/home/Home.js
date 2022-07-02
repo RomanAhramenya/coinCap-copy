@@ -14,7 +14,7 @@ export const Home = () => {
 
   return (
     <Layout title='Reliable Cryptocurrency Prices and Market Capitalizations'>
-      <MainStatisticsHeader currency={currency} isThemeDark={isThemeDark} language={language}/>
+      {/* <MainStatisticsHeader currency={currency} isThemeDark={isThemeDark} language={language}/> */}
 	  <Tablecoins  currency={currency} isThemeDark={isThemeDark} language={language}/>
     </Layout>
   )
