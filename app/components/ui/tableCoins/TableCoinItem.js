@@ -8,10 +8,11 @@ import {
   changeClassName
 } from "../../../assets/helpers/settings";
 import s from "./../../../../styles/tableCoins.module.scss";
+import TableAllInfoCoin from "./TableAllInfoCoin";
 export const TableCoinItem = ({ el, currency }) => {
   const [isShowCoin, setIsShowCoin] = useState(false);
   return (
-    // <Link href={'/assets/[id]'} as={`/assets/${el.id}`} >
+    
     <>
       <tr onClick={()=>setIsShowCoin(!isShowCoin)} key={el.rank}>
         <td className={`${s.center_align}`}>{el.rank}</td>
@@ -50,10 +51,8 @@ export const TableCoinItem = ({ el, currency }) => {
           {Number(el.changePercent24Hr).toFixed(2)} %
         </td>
       </tr>
-      {isShowCoin && <tr>
-        <td colSpan={9}>
-                {el.name}
-        </td>
+      {isShowCoin && <tr  className={s.table_info_coin} key={el.id}>
+       <TableAllInfoCoin el={el} currency={currency}/>
       </tr>}
     </>
 

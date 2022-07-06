@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 // import { HYDRATE } from 'next-redux-wrapper';
 // // import { AppState, AppThunk } from '..';
-import { getCoins, getExchanges } from "./getCoinsAction";
+import { getCoins, getExchanges, getHistory } from "./getCoinsAction";
 const initialState = {
   isLoading: false,
   error: "",
@@ -9,6 +9,11 @@ const initialState = {
   exchanges: {
     isLoading: false,
     error: "",
+    data: {},
+  },
+  history: {
+    error: "",
+    isLoading: false,
     data: {},
   },
   mainStatistic: {
@@ -24,7 +29,6 @@ export const getCoinsSlice = createSlice({
   name: "coins",
   initialState,
   reducers: {
-    
     getStatistics: (state) => {
       if (state.coins.length > 0) {
         state.mainStatistic.MarketCap = (
@@ -38,23 +42,16 @@ export const getCoinsSlice = createSlice({
           }, 0) / 1000000000
         ).toFixed(2);
       }
-      
     },
-    getMarkets:(state) => {
-if(state.exchanges.data.length > 0) {
-           state.mainStatistic.exchanges = state.exchanges.data.length;
+    getMarkets: (state) => {
+      if (state.exchanges.data.length > 0) {
+        state.mainStatistic.exchanges = state.exchanges.data.length;
       }
-    }
+    },
+    
   },
 
   extraReducers: (builder) => {
-    // builder.addCase([HYDRATE],(state,action) => {
-    //   console.log('HYDRATE', action.payload.coins.coins)
-    //   return {
-    //     ...state,
-    //     ...action.payload.coins.coins
-    //   }
-    // }),
     builder.addCase(getCoins.pending, (state) => {
       state.isLoading = true;
     }),
@@ -78,8 +75,20 @@ if(state.exchanges.data.length > 0) {
       builder.addCase(getExchanges.rejected, (state, { payload }) => {
         state.exchanges.error = payload;
         state.exchanges.isLoading = false;
+      }),
+      builder.addCase(getHistory.pending, (state) => {
+        state.history.isLoading = true;
+      }),
+      builder.addCase(getHistory.fulfilled, (state, { payload }) => {
+        (state.history.isLoading = false),
+          (state.history.error = ""),
+          (state.history.data[payload.id] = payload.data);
+      }),
+      builder.addCase(getHistory.rejected, (state, { payload }) => {
+        state.history.error = payload;
+        state.history.isLoading = false;
       });
   },
 });
-export const { getStatistics,getMarkets } = getCoinsSlice.actions;
+export const { getStatistics, getMarkets } = getCoinsSlice.actions;
 export default getCoinsSlice.reducer;

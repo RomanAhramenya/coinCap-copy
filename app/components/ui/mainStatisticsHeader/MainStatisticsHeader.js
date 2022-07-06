@@ -79,13 +79,13 @@ export const MainStatisticsHeader = ({ language, isThemeDark, currency }) => {
         </div>
       </div>
 
-      <div className={s.items_dark}>
+      <div onClick={() => setIsStatistic(!isStatistics)} className={s.items_dark}>
         <div className={s.header_mobile__screen}>
           <div className={s.header_mobile__screen_title}>
             {translate(language, "Market Shapshot", "Обзор рынка")}
           </div>
           <div
-            onClick={() => setIsStatistic(!isStatistics)}
+            
             className={s.header_mobile__screen_image}
           >
             {isStatistics ? <span>&#9660;</span> : <span>&#9668;</span>}

@@ -25,6 +25,7 @@ function floor(a) {
   if(a < 0.00000001) return a.toFixed(9)
 }
 export function currencyHelper(cur, usd) {
+  
     switch (cur) {
       case "BYR":
         
@@ -64,4 +65,32 @@ export function currencyHelper(cur, usd) {
   export function changeClassName(num) {
     if(num >= 0) return 'change_green'
     if(num < 0) return 'change_red'
+  }
+
+  export function MaxMinAver(MaxMinAver,arr,currency) {
+    if(MaxMinAver === 'max') {
+      let max = arr.reduce((acc, curr) => acc.priceUsd > curr.priceUsd ? acc : curr);
+      return currencyHelper(currency,max.priceUsd)
+    }
+    if(MaxMinAver === 'min') {
+      let min = arr.reduce((acc, curr) => acc.priceUsd < curr.priceUsd ? acc : curr);
+      return currencyHelper(currency,min.priceUsd)
+    }
+    if(MaxMinAver === 'aver') {
+      
+      let aver = arr.reduce((a, b) => a + +b.priceUsd, 0) / arr.length
+     
+      return currencyHelper(currency,aver)
+    }
+  }
+  let MonthRu = ["Января","Февраля","Марта","Апреля","Мая","Июня","Июля","Августа","Сентября","Октября","Ноября","Декабря"];
+  let MonthEn = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+  export function setDate(lang) {
+    let now = new Date()
+    if(lang === 'ru'){
+      return `${now.getDate()} ${MonthRu[now.getMonth()]} ${now.getFullYear()}`
+    }
+    if(lang === 'en'){
+      return `${now.getDate()} ${MonthEn[now.getMonth()]} ${now.getFullYear()}`
+    }
   }

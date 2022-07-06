@@ -14,6 +14,7 @@
  position: relative;
  top:-140px;
   table {
+   border-radius: 5px;
     border-collapse: collapse;
     line-height: 4;
     thead {
@@ -45,6 +46,10 @@
         }
         td {
           border-bottom: 1px solid rgba(34, 36, 38, 0.1);
+          .moreDetails{
+            text-align: center;
+            margin: 1em 0;
+          }
           &:last-child {
             padding-right: 1em;
           }
@@ -136,13 +141,13 @@
 }
 @media only screen and (min-width: 768px) and (max-width: 991px){
   .container,
-  .containerDark {
-    width: 933px;
+  .containerDark{
+    width: 723px;
     margin-left: auto!important;
     margin-right: auto!important;
 }
 }
-@media  (max-width: 768px){
+@media  (max-width: 767px){
   .container,
   .containerDark {
     top: 0 !important;
@@ -173,6 +178,12 @@
             padding-left: 1em;
           }
         }
+      }
+      .table_info_coin{
+        td{
+          display: table-cell !important;
+        }
+        
       }
     }
 }

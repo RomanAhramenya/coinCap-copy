@@ -21,7 +21,7 @@ a {
   box-sizing: border-box;
 }
 .change_green {
-  color: green;
+  color: rgb(24, 198, 131);
 }
 .change_red {
   color: red;
