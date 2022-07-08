@@ -36,7 +36,7 @@ export const getExchanges = createAsyncThunk(
 export const getHistory = createAsyncThunk(
   "axios/getHistory",
   async (arg, thunkAPI) => {
-   let dateOffset = (1*60*60*1000) ; 
+  
     let myDate = new Date();
 
     let end = myDate.setTime(myDate.getTime());
