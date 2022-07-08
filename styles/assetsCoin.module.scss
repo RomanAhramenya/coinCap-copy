@@ -33,7 +33,6 @@
             padding: 0 1rem;
             width: auto;
             display: inline-block;
-            color: white;
             box-shadow: rgb(0 0 0 / 40%) 0px 2px 15px -3px;
             &::before{
                 content: "";
@@ -159,6 +158,14 @@
   }
 }
 @media (max-width: 768px){
+  .headerDark{
+    padding: 2em 1em;
+    .left_header_name {
+      h1,span{
+       margin-left: 0.5em;
+      }
+    }
+  }
   .container {
     width: auto !important;
     margin: 0 auto !important;
@@ -171,9 +178,16 @@
     .right_header_row{
       width: 100% !important;
     }
+    
   }
 }
 @media (max-width: 380px){
+
+  .left_header_name {
+    h1{
+      font-size: 1.5em !important;
+    }
+  }
   .right_header_colum{
     flex: 0 0 100px !important;
   }
