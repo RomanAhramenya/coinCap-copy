@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import HeaderAssetsCoin from "./HeaderAssetsCoin";
+import { MiddleAssetsCoin } from "./MiddleAssetsCoin";
 
 export const AssetsCoin = ({ coin, history }) => {
   const { rank, name, symbol, priceUsd, changePercent24Hr,marketCapUsd,volumeUsd24Hr,supply } = coin.data;
@@ -19,6 +20,7 @@ export const AssetsCoin = ({ coin, history }) => {
         volumeUsd24Hr={volumeUsd24Hr}
         supply={supply}
       />
+      <MiddleAssetsCoin coin={coin.data} history={history} settings={settings}/>
     </>
   );
 };

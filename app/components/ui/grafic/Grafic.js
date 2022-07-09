@@ -30,13 +30,14 @@ ChartJS.register(
   
 );
 export const Grafic = ({ el, interval }) => {
+  console.log(el)
   const {id} = el
   const dispatch = useDispatch();
   const history = useSelector((state) => state.coins.history);
   const settings = useSelector(state => state.settings)
   useEffect(() => {
     dispatch(getHistory({ id, interval }));
-  }, []);
+  }, [interval]);
   const labels = [];
 
   const dataPrice = [];
@@ -132,7 +133,7 @@ export const Grafic = ({ el, interval }) => {
 
         <div className={s.info_name}>
           <div className={s.img}>
-            <Image width={80} height={80}  src={`https://assets.coincap.io/assets/icons/${el.symbol.toLowerCase()}@2x.png`} alt={el.name}/>
+            <Image width={60} height={60}  src={`https://assets.coincap.io/assets/icons/${el.symbol.toLowerCase()}@2x.png`} alt={el.name}/>
           </div>
           <div>
           <h3>
