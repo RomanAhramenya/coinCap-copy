@@ -94,3 +94,18 @@ export function currencyHelper(cur, usd) {
       return `${now.getDate()} ${MonthEn[now.getMonth()]} ${now.getFullYear()}`
     }
   }
+
+  export function Month(UNIX_timestamp){
+    let date = new Date(UNIX_timestamp)
+   const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+   const month = months[date.getMonth()]
+   let day = date.getDate()
+    return `${month} ${day}`
+  }
+  export function Year(UNIX_timestamp){
+    let date = new Date(UNIX_timestamp)
+   const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+   const month = months[date.getMonth()]
+   let year = date.getFullYear()
+    return `${month} ${year}`
+  }

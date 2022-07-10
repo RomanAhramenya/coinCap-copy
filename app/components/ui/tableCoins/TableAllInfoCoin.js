@@ -12,7 +12,7 @@ const TableAllInfoCoin = ({currency,el}) => {
          
               <td  colSpan={9}>
                
-                    <Grafic el={el} currency={currency}  interval={'h1'}/>
+                    <Grafic el={el} currency={currency}  interval={'h1'} day={'h1'}/>
                     <div className={s.moreDetails}>
                    <Link href={'/assets/[id]'} as={`/assets/${el.id}`} >
                     <a>

@@ -155,12 +155,13 @@
   }
 }
 @media (max-width: 768px) {
-  .headerDark {
-    padding: 2em 1em;
+  .headerDark,.header {
+    padding: 2em 0 !important;
+    text-align: center !important;
     .left_header_name {
       h1,
       span {
-        margin-left: 0.5em;
+        margin-left: 0.5em !important ;
       }
     }
   }
@@ -175,6 +176,7 @@
     }
     .right_header_row {
       width: 100% !important;
+      justify-content: space-between !important;
     }
   }
 }
@@ -205,6 +207,7 @@
       .listitem_grafic {
         padding-top: 0.21428571em;
         padding-bottom: 0.21428571em;
+        padding-left: 1em;
         .buttonGrafic {
           background: transparent;
           color: rgb(24, 198, 131);

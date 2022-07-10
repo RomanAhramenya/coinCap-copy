@@ -15,7 +15,7 @@ import {
 import { useEffect, useState } from "react";
 import { getHistory } from "../../../store/slice/getCoinsAction";
 import Image from "next/image";
-import { changeClassName, MaxMinAver, setDate } from "../../../assets/helpers/settings";
+import { changeClassName, MaxMinAver, Month, setDate, Year } from "../../../assets/helpers/settings";
 import { changeArray } from "../../../store/slice/getCoinsSlice";
 
 ChartJS.register(
@@ -29,28 +29,41 @@ ChartJS.register(
   Filler,
   
 );
-export const Grafic = ({ el, interval }) => {
+export const Grafic = ({ el, interval , day }) => {
   console.log(el)
   const {id} = el
   const dispatch = useDispatch();
   const history = useSelector((state) => state.coins.history);
   const settings = useSelector(state => state.settings)
   useEffect(() => {
-    dispatch(getHistory({ id, interval }));
-  }, [interval]);
+    dispatch(getHistory({ id, interval,day }));
+  }, [day]);
   const labels = [];
 
   const dataPrice = [];
 
   if (history.data[id]) {
     history.data[id].map((el) => {
-      switch (interval) {
+      switch (day) {
         case "h1":
+          
           labels.push(el.date.slice(11, -8));
           break;
+          case "w1":
+            labels.push(el.date.slice(5, -14));
+            break;
         case "d1":
-          labels.push(el.date.slice(5, -14));
+          labels.push(Month(el.time));
           break;
+          case "m3":
+            labels.push(Month(el.time));
+            break;
+            case "m6":
+              labels.push(Month(el.time));
+              break;
+              case "1y":
+                labels.push(Year(el.time));
+                break;
         default:
           break;
       }
