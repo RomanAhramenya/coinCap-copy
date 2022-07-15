@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useState } from "react";
 import { translate } from "../../../assets/helpers/settings";
 import { Button } from "../../ui/Button";
 import s from "./../../../../styles/assetsCoin.module.scss";
@@ -8,6 +9,8 @@ import imageSwap from "./../../../assets/image/swap.png";
 import imageSwapDark from "./../../../assets/image/swapDark.png";
 import { ShowSelectToken } from "./ShowSelectToken";
 export const SwapAssetsCoin = ({ isThemeDark, language }) => {
+  const [isShowSelectTokenFirst,setIsShowSelectTokenFirst] = useState(false)
+  const [isShowSelectTokenSecond,setIsShowSelectTokenSecond] = useState(false)
   return (
     <div className={isThemeDark ? s.swapDark : s.swap}>
       <div className={s.swap_container}>
@@ -29,7 +32,7 @@ export const SwapAssetsCoin = ({ isThemeDark, language }) => {
             </div>
             <div className={s.operation}>
               <input type='number'  placeholder="0"/>
-              <button>
+              <button onClick={()=>setIsShowSelectTokenFirst(true)}>
                 <div className={s.operation_image}>
                   <Image
                     width={26}
@@ -57,7 +60,10 @@ export const SwapAssetsCoin = ({ isThemeDark, language }) => {
             </div>
           </div>
           <Button en='Conect Wallet' ru='Подключить кошелёк'/>
-          <ShowSelectToken language={language}/>
+          {
+            isShowSelectTokenFirst &&  <ShowSelectToken close={setIsShowSelectTokenFirst} language={language}/>
+          }
+          
         </div>
         
       </div>

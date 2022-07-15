@@ -375,6 +375,7 @@
 // showCoin
 
 .show_container {
+  animation: show 0.45s linear ;
   position: absolute;
   left: 0;
   top: 0;
@@ -386,6 +387,7 @@
   background-color: rgb(255, 255, 255);
   box-shadow: rgb(0 0 0 / 9%) 0px 0px 30px -3px;
   z-index: 5;
+  
   .header_show {
     display: flex;
     -webkit-box-pack: justify;
@@ -422,36 +424,50 @@
     &::-webkit-scrollbar {
       width: 5px; /* ширина для вертикального скролла */
       height: 8px; /* высота для горизонтального скролла */
-  }
+    }
     &::-webkit-scrollbar-thumb {
       background-color: gray;
       border-radius: 9em;
       box-shadow: inset 1px 1px 10px #f3faf7;
-  }
+    }
     .token_list {
       height: 60px;
       width: 100%;
       padding: 5px 20px;
-     > div {
+      > div {
         display: flex;
-        padding: 5px ;
+        padding: 5px;
         height: 50px;
         -webkit-box-align: center;
         align-items: center;
         border-radius: 8px;
-       div {
-        margin-left: 1em;
-        div:last-child{
-          color:gray
+        div {
+          margin-left: 1em;
+          div:last-child {
+            color: gray;
+          }
         }
-       }
-       cursor: pointer;
-       transition: all 0.2s;
-       &:hover{
-        background-color:rgba(128, 128, 128, 0.178)
-      }
+        cursor: pointer;
+        transition: all 0.2s;
+        &:hover {
+          background-color: rgba(128, 128, 128, 0.178);
+        }
       }
     }
   }
+}
 
+@keyframes show {
+  0% {
+    left: 0;
+    top: 1000px;
+    right: 0;
+    bottom: 0;
+  }
+  100% {
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
 }

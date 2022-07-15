@@ -7,7 +7,7 @@ import { translate } from '../../../assets/helpers/settings';
 import { Loader } from '../../ui/Loader';
 import s from './../../../../styles/assetsCoin.module.scss'
 import { ItemCoinSearch } from './ItemCoinSearch';
-export const ShowSelectToken = ({coins:serverCoins,language}) => {
+export const ShowSelectToken = ({coins:serverCoins,language,close}) => {
     const [coins, setCoins] = useState(serverCoins);
     const [isShow,setIsShow] = useState(false)
     const [value,setValue] = useState('')
@@ -42,7 +42,7 @@ export const ShowSelectToken = ({coins:serverCoins,language}) => {
     <div className={s.show_container}>
         <div className={s.header_show}>
             <h3>{translate(language,'Select a Token' , 'Выберите токен')}</h3>
-            <div className={s.show_image}>
+            <div  className={s.show_image} onClick={() => close(false)}>
                 <Image width={15} height={15} src={image} alt='close'/>
             </div>
         </div>
