@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { translate } from '../../../assets/helpers/settings';
 import { Loader } from '../../ui/Loader';
 import s from './../../../../styles/assetsCoin.module.scss'
-import SearchCoin from './SearchCoin';
+import { ItemCoinSearch } from './ItemCoinSearch';
 export const ShowSelectToken = ({coins:serverCoins,language}) => {
     const [coins, setCoins] = useState(serverCoins);
     const [isShow,setIsShow] = useState(false)
@@ -33,6 +33,10 @@ export const ShowSelectToken = ({coins:serverCoins,language}) => {
     if (!coins) {
       return   <div className={s.show_container}> <Loader/></div> 
     }
+
+    const filteredCoins = coins.filter(coin => {
+      return coin.id.toLowerCase().includes(value.toLowerCase())
+    })
   return (
 
     <div className={s.show_container}>
@@ -45,7 +49,12 @@ export const ShowSelectToken = ({coins:serverCoins,language}) => {
         <div className={s.search}>
           <input value={value} onChange={e => changeHandler(e)} placeholder='Search by symbol,name, or address...'/>
         </div>
-       <SearchCoin coins={coins} value={value}/>
+          <div className={s.searchCoins}>
+         {filteredCoins.map(coin => {
+          return <ItemCoinSearch id={coin.id} name={coin.name} symbol={coin.symbol}/>
+         })}
+        </div>
+       
 </div>
   )
 }
