@@ -4,7 +4,16 @@ import HeaderAssetsCoin from "./HeaderAssetsCoin";
 import { MiddleAssetsCoin } from "./MiddleAssetsCoin";
 
 export const AssetsCoin = ({ coin, history }) => {
-  const { rank, name, symbol, priceUsd, changePercent24Hr,marketCapUsd,volumeUsd24Hr,supply } = coin.data;
+  const {
+    rank,
+    name,
+    symbol,
+    priceUsd,
+    changePercent24Hr,
+    marketCapUsd,
+    volumeUsd24Hr,
+    supply,
+  } = coin.data;
   const settings = useSelector((state) => state.settings);
   return (
     <>
@@ -20,7 +29,11 @@ export const AssetsCoin = ({ coin, history }) => {
         volumeUsd24Hr={volumeUsd24Hr}
         supply={supply}
       />
-      <MiddleAssetsCoin coin={coin.data} history={history} settings={settings}/>
+      <MiddleAssetsCoin
+        coin={coin.data}
+        history={history}
+        settings={settings}
+      />
     </>
   );
 };

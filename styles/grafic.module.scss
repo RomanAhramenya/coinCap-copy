@@ -24,11 +24,10 @@
  .info_stat{
     width: 50%;
     display: flex;
- 
-    justify-content: space-around;
- 
+    justify-content: space-between;
     align-items: center;
     .info_stat_1,.info_stat_2{
+        width: 100%;
         div{
             display: flex;
             align-items: center;
@@ -45,7 +44,7 @@
 .containerDark h4 {
     color:rgba(255, 255, 255, 0.836) !important
 }
-@media  (max-width: 991px){
+@media  (max-width: 1200px){
 .info{
     display: block !important;
     .info_stat,.info_name{
