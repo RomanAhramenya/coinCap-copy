@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Grafic } from '../../ui/grafic/Grafic'
 import s from './../../../../styles/assetsCoin.module.scss'
 import { ButtonGrafic } from './ButtonGrafic'
-import { SwapAssetsCoin } from './SwapAssetsCoin'
+import { SwapAssetsCoin } from './swap/SwapAssetsCoin'
 export const MiddleAssetsCoin = ({coin,history,settings}) => {
     let {isThemeDark,language,currency} = settings
     const [intervalGrafic,setIntervalGrafic] = useState('h1')
@@ -22,7 +22,7 @@ export const MiddleAssetsCoin = ({coin,history,settings}) => {
                     <ButtonGrafic lang={language} en='1Y' ru='1Г'  action={setIntervalGrafic} interval='d1' day='1y' setDay={setDay} active={day}/>
                 </div>
             </div>
-            <SwapAssetsCoin language={language} isThemeDark={isThemeDark}/>
+            <SwapAssetsCoin btc={coin.symbol} btcPrice={coin.priceUsd} language={language} isThemeDark={isThemeDark}/>
         </div>
     </div>
   )

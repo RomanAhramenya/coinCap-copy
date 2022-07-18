@@ -1,9 +1,13 @@
 
 import Image from 'next/image'
-import s from './../../../../styles/assetsCoin.module.scss'
-export const ItemCoinSearch = ({id,symbol,name}) => {
+import s from './../../../../../styles/swap.module.scss'
+export const ItemCoinSearch = ({id,symbol,name,setImage,price,close}) => {
+    function clickHandle() {
+        setImage({img:symbol.toLowerCase(),price:price})
+        close(false)
+    }
   return (
-    <div  className={s.token_list} key={id}>
+    <div onClick={()=> clickHandle()}  className={s.token_list} key={id}>
             <div>
               <Image width={30} height={30}  src={`https://assets.coincap.io/assets/icons/${symbol.toLowerCase()}@2x.png`} alt={name} />
               <div>

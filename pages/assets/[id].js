@@ -5,12 +5,9 @@ import { AssetsCoin } from "../../app/components/screens/assetsCoin/AssetsCoin";
 import { Loader } from "../../app/components/ui/Loader";
 
 export default function Assets({ coin: serverCoin, history: serverHistory }) {
-  console.log(serverCoin);
-  console.log(serverHistory);
+
   const [history, setHistory] = useState(serverHistory);
   const [coin, setCoin] = useState(serverCoin);
-  console.log(coin);
-  console.log(history);
   const router = useRouter();
   useEffect(() => {
     

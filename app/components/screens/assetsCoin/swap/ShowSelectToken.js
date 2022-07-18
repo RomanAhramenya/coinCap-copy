@@ -1,15 +1,14 @@
 
 import Image from 'next/image';
-import image from './../../../assets/image/close.png'
+import image from './../../../../assets/image/close.png'
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { translate } from '../../../assets/helpers/settings';
-import { Loader } from '../../ui/Loader';
-import s from './../../../../styles/assetsCoin.module.scss'
+import { translate } from '../../../../assets/helpers/settings';
+import { Loader } from '../../../ui/Loader';
+import s from './../../../../../styles/swap.module.scss'
 import { ItemCoinSearch } from './ItemCoinSearch';
-export const ShowSelectToken = ({coins:serverCoins,language,close}) => {
+export const ShowSelectToken = ({coins:serverCoins,language,close,setImage}) => {
     const [coins, setCoins] = useState(serverCoins);
-    const [isShow,setIsShow] = useState(false)
     const [value,setValue] = useState('')
     const changeHandler = (e) => {
         setValue(e.currentTarget.value)
@@ -28,8 +27,8 @@ export const ShowSelectToken = ({coins:serverCoins,language,close}) => {
         if (!serverCoins) {
             load();
            } 
+           
     }, []);
-  
     if (!coins) {
       return   <div className={s.show_container}> <Loader/></div> 
     }
@@ -51,7 +50,7 @@ export const ShowSelectToken = ({coins:serverCoins,language,close}) => {
         </div>
           <div className={s.searchCoins}>
          {filteredCoins.map(coin => {
-          return <ItemCoinSearch id={coin.id} name={coin.name} symbol={coin.symbol}/>
+          return <ItemCoinSearch setImage={setImage} close={close} id={coin.id} name={coin.name} symbol={coin.symbol} price={coin.priceUsd}/>
          })}
         </div>
        
@@ -74,7 +73,7 @@ ShowSelectToken.getInitialProps = async ({ query, req }) => {
     const coin = await responseCoins;
   
     return {
-      history
+      coin
     };
   };
   
