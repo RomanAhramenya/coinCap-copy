@@ -70,6 +70,108 @@
   flex: 1 1 0%;
   min-width: 380px;
   width: 100%;
+  .inputRate{
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    padding: 12px 17px;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 0px;
+    border-top: 1px solid rgb(236, 239, 241);
+    border-left: none;
+    border-right: none;
+    input{
+      font-weight: 700;
+    }
+    input[type="range"]{
+      
+      appearance: none;
+      margin: 10px 0px;
+      height: 6px;
+      width: 100%;
+      border-radius: 12px;
+      cursor: pointer;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 25px;
+    width: 25px;
+    border-radius: 2px;
+    background-color:white;
+    border: solid 2px rgb(24, 198, 131);
+}
+  .inputProcent{
+    background: transparent;
+    border: none;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 17px;
+    padding: 7px;
+    width: 4em;
+    text-align: center;
+  }
+
+
+  }
+  .multitop{
+    border-left: 1px solid rgb(236, 239, 241);
+    flex-basis: 28%;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    padding: 12px 17px;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 0px;
+    border-top: 1px solid rgb(236, 239, 241);
+    border-right: none;
+
+    div{
+      width: 100%;
+      
+      input{
+        display: none;
+        &:checked + label{
+          background-color:rgb(24, 198, 131) !important;
+        }
+           &:checked + label span{
+         animation:radio 0.25s ease-in;
+          left:29px
+        }
+      }
+      label{
+        cursor: pointer;
+        display: inline-block;
+        border:1px solid rgba(0, 0, 0, 0.356);
+        width:50px;
+        height: 20px;
+        border-radius:20px;
+        transition: all 0.2s;
+        background: rgb(205, 209, 212);
+        span{
+          display: inline-block;
+          background-color:white;
+          width:20px;
+          height: 18px;
+          border-radius:100%;
+          position: relative;
+          transition: all 0.2s;
+        }
+       
+      }
+   
+    }
+  }
   .connectWallet{
     button{
       width: 100% !important;
@@ -174,6 +276,9 @@
       margin-bottom: 17px;
       color: rgba(0, 0, 0, 0.9);
       border: none !important;
+      .show_image{
+        cursor: pointer;
+      }
       h3 {
         font-size: 1.4em;
       }
@@ -234,9 +339,17 @@
   }
 }
 .swapDark {
+  .show_container{
+    .inputRate,.multitop{
+      color:rgba(255, 255, 255, 0.9) !important;
+      input{
+        color:rgba(255, 255, 255, 0.9) !important;
+      }
+    }
+  }
   .swap_container {
     .swap_header {
-      color: white !important;
+      color: rgba(255, 255, 255, 0.9) !important;
     }
     .swap_content {
       .show_container {
@@ -244,7 +357,7 @@
         box-shadow: rgb(0 0 0 / 9%) 0px 0px 30px -3px !important;
 
         .header_show {
-          color: white !important;
+          color: rgba(255, 255, 255, 0.9) !important;
         }
         .search {
           input {
@@ -277,5 +390,13 @@
   }
   100% {
     opacity: 1;
+  }
+}
+@keyframes radio{
+  0%{
+    left:0;
+  }
+  100%{
+    left:29px;
   }
 }

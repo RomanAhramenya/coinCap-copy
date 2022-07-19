@@ -192,6 +192,11 @@
   .right_header_colum {
     flex: 0 0 100px !important;
   }
+  .header,
+.headerDark,.middle,
+.middleDark {
+  margin-right: -1em;
+}
 }
 
 // MIDDLE PAGE (STYLE)

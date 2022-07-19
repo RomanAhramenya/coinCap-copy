@@ -8,11 +8,14 @@ import imageSwap from "./../../../../assets/image/swap.png";
 import imageSwapDark from "./../../../../assets/image/swapDark.png";
 import InputSelect from "./InputSelect";
 import { ShowSelectToken } from "./ShowSelectToken";
+import { SwapSettings } from "./SwapSettings";
 export const SwapAssetsCoin = ({ btc, btcPrice, isThemeDark, language }) => {
   const [isShowSelectTokenFirst, setIsShowSelectTokenFirst] = useState(false);
   const [isShowSelectTokenSecond, setIsShowSelectTokenSecond] = useState(false);
+  const [showSettings,setShowSettings] = useState(false)
   const [valueInputFirst, setValueInputFirst] = useState("");
   const [valueInputSecond, setValueInputSecond] = useState("");
+ 
   const [imageFirst, setImageFirst] = useState({ img: btc, price: btcPrice });
   const [imageSecond, setImageSecond] = useState({ img: btc, price: btcPrice });
   function calc() {
@@ -37,7 +40,7 @@ export const SwapAssetsCoin = ({ btc, btcPrice, isThemeDark, language }) => {
       <div className={s.swap_container}>
         <div className={s.swap_header}>
           <h3>Swap</h3>
-          <div className={s.image}>
+          <div onClick={()=> setShowSettings(true)} className={s.image}>
             <Image
               width={20}
               height={20}
@@ -107,6 +110,7 @@ export const SwapAssetsCoin = ({ btc, btcPrice, isThemeDark, language }) => {
               language={language}
             />
           )}
+          {showSettings && <SwapSettings language={language} close={setShowSettings}/>}
         </div>
       </div>
     </div>
