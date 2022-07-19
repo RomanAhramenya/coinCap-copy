@@ -30,7 +30,6 @@ ChartJS.register(
   
 );
 export const Grafic = ({ el, interval , day }) => {
-  console.log(el)
   const {id} = el
   const dispatch = useDispatch();
   const history = useSelector((state) => state.coins.history);

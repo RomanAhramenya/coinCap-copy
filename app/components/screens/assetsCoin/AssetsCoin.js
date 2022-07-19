@@ -1,9 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { FooterTable } from "./FooterTable";
 import HeaderAssetsCoin from "./HeaderAssetsCoin";
 import { MiddleAssetsCoin } from "./MiddleAssetsCoin";
 
-export const AssetsCoin = ({ coin, history }) => {
+export const AssetsCoin = ({ coin, history,markets }) => {
   const {
     rank,
     name,
@@ -34,6 +35,7 @@ export const AssetsCoin = ({ coin, history }) => {
         history={history}
         settings={settings}
       />
+      <FooterTable settings={settings} markets={markets.data}/>
     </>
   );
 };

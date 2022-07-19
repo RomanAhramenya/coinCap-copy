@@ -4,15 +4,14 @@ import { Layout } from "../../app/components/layout/Layout";
 import { AssetsCoin } from "../../app/components/screens/assetsCoin/AssetsCoin";
 import { Loader } from "../../app/components/ui/Loader";
 
-export default function Assets({ coin: serverCoin, history: serverHistory }) {
+export default function Assets({ coin: serverCoin, history: serverHistory,markets:serverMarkets }) {
 
   const [history, setHistory] = useState(serverHistory);
   const [coin, setCoin] = useState(serverCoin);
+  const [markets,setMarkets] = useState(serverMarkets)
   const router = useRouter();
   useEffect(() => {
-    
     async function load() {
-      
       const responseCoin = await fetch(
         `https://api.coincap.io/v2/assets/${router.query.id}`
       ).then((res) => {
@@ -35,15 +34,20 @@ export default function Assets({ coin: serverCoin, history: serverHistory }) {
     
       const history = await responseHistory;
       setHistory(history);
-     
+      
+      const responseMarkets = await fetch(`https://api.coincap.io/v2/assets/${router.query.id}/markets`).then((res)=>{
+        return res.json()
+      })
+      const markets = await responseMarkets
+      setMarkets(markets)
     }
-    if (!serverCoin || !serverHistory) {
+    if (!serverCoin || !serverHistory || !serverMarkets) {
      
       load();
     }
   }, []);
 
-  if (!coin || !history) {
+  if (!coin || !history || !markets) {
     return (
       <Layout title="">
         <Loader/>
@@ -52,7 +56,7 @@ export default function Assets({ coin: serverCoin, history: serverHistory }) {
   }
   return (
     <Layout title="">
-      <AssetsCoin coin={coin} history={history} />
+      <AssetsCoin markets={markets} coin={coin} history={history} />
     </Layout>
   );
 }
@@ -62,6 +66,7 @@ Assets.getInitialProps = async ({ query, req }) => {
     return {
       coin: null,
       history: null,
+      markets:null
     };
   }
   const responseCoin = await fetch(
@@ -83,9 +88,13 @@ Assets.getInitialProps = async ({ query, req }) => {
     return res.json();
   });
   const history = await responseHistory;
-
+  const responseMarkets = await fetch(`https://api.coincap.io/v2/assets/${query.id}/markets`).then((res)=>{
+    return res.json()
+  })
+  const markets = await responseMarkets
   return {
     coin,
     history,
+    markets
   };
 };

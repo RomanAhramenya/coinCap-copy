@@ -8,7 +8,7 @@
   transition: transform 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
   -webkit-box-shadow: rgb(0 0 0 / 40%) 0px 2px 15px -3px;
   box-shadow: rgb(0 0 0 / 40%) 0px 2px 15px -3px;
-  background: rgb(24, 198, 131) !important;
+  background: rgb(24, 198, 131) ;
   color: white;
   padding: 0.8em 1.5em;
   font-size: 1em;
@@ -26,4 +26,13 @@
     -ms-transform: translateY(-2px);
     transform: translateY(-2px);
   }
+
 }
+  .disabled{
+    background: rgba(24, 198, 131, 0.5)  !important;
+    &:hover {
+      -webkit-transform: translateY(-0px)!important;
+      -ms-transform: translateY(-0px)!important;
+      transform: translateY(-0px)!important;
+    }
+  }
