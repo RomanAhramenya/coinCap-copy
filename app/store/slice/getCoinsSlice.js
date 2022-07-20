@@ -9,7 +9,7 @@ const initialState = {
   exchanges: {
     isLoading: false,
     error: "",
-    data: {},
+    data: [],
   },
   history: {
     error: "",

@@ -14,13 +14,25 @@ export const SwapSettings = ({
     const [rateValue,setRateValue] = useState(1)
     const [RadioValue,setRadioValue] = useState(false)
     const [selectExchanges,setSelectExchanges] = useState({})
+    const [toggle,setToggle] = useState(false)
     let textExchanges =  Object.values(selectExchanges).filter(el => el.isSelect === true)
     function toggleAll () {
       let a={}
-       Object.values(selectExchanges).map((el,index)=> {
+      if(toggle) {
+         Object.values(selectExchanges).map((el,index)=> {
         console.log(el)
         a[index] = {name:el.name,isSelect:true}
-      })
+      }
+      ) 
+      
+    }
+      if(!toggle) {
+        Object.values(selectExchanges).map((el,index)=> {
+       console.log(el)
+       a[index] = {name:el.name,isSelect:false}
+     }) 
+      }
+      setToggle(!toggle)
       setSelectExchanges(a)
     }
     useEffect(()=>{

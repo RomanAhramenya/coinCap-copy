@@ -367,7 +367,7 @@ label{
       justify-content: space-between;
       -webkit-box-align: center;
       align-items: center;
-      padding: 20px 20px 0px;
+      padding: 0px 20px 0px !important;
       margin-bottom: 17px;
       color: rgba(0, 0, 0, 0.9);
       border: none !important;
@@ -436,6 +436,9 @@ label{
 .swapDark {
 
   .show_container{
+    .inputRate,.multitop,.section_exchanges_settings{
+      border-color: rgba(0, 0, 0, 0.205) !important;
+    }
   .section_exchanges_all,.section_exchanges_settings{
     color:white !important;
   }

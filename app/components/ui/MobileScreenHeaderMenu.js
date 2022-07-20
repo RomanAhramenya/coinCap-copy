@@ -46,7 +46,7 @@ const MobileScreenHeaderMenu = ({ settings }) => {
           className={s.mobail_menu}
         >
           <MobileScreenMenuItem
-            href="/coins"
+            href="/"
             worldEn="Coins"
             worldRu="Монеты"
             imageDark={coinDark}
