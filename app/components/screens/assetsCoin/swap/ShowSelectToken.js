@@ -50,7 +50,8 @@ export const ShowSelectToken = ({coins:serverCoins,language,close,setImage}) => 
         </div>
           <div className={s.searchCoins}>
          {filteredCoins.map(coin => {
-          return <ItemCoinSearch setImage={setImage} close={close} id={coin.id} name={coin.name} symbol={coin.symbol} price={coin.priceUsd}/>
+          const key =  Date.now() * Math.random(1,10000)
+          return <ItemCoinSearch key={key} setImage={setImage} close={close} id={coin.id} name={coin.name} symbol={coin.symbol} price={coin.priceUsd}/>
          })}
         </div>
        

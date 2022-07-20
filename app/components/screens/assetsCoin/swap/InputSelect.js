@@ -18,7 +18,7 @@ const InputSelect = ({disabled,value, setValue, en, ru , image,showHandler,langu
           type="number"
           placeholder="0"
         />
-        <button onClick={() => showHandler(true)}>
+        <button style={{cursor:'pointer'}} onClick={() => showHandler(true)}>
           {image ? (
             <div className={s.operation_image}>
               <Image

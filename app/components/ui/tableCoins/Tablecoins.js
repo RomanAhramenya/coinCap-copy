@@ -56,7 +56,8 @@ export const Tablecoins = ({language,currency,isThemeDark}) => {
             </thead>
             <tbody>
                 {coins.map(el=>{
-                    return <TableCoinItem el={el} currency={currency}/>
+                    const key =  Date.now() * Math.random(1,10000)
+                    return <TableCoinItem key={key} el={el} currency={currency}/>
                 })}
             </tbody>
             <tfoot> 

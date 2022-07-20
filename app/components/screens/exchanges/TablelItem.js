@@ -1,10 +1,11 @@
-import { currencyHelper } from "../../../assets/helpers/settings";
+import {  roundUpToB_M_T, roundUpToB_M_T_currency } from "../../../assets/helpers/settings";
 import s from "./../../../../styles/tableCoins.module.scss";
-
+import { useRouter } from 'next/router'
 const TablelItem = ({currency,el}) => {
+    const router = useRouter()
   return (
     <>
-      <tr key={el.rank}>
+      <tr onClick={() => router.push(`/exchanges/${el.exchangeId.toLowerCase()}`)} key={el.rank}>
         <td className={`${s.center_align}`}>{el.rank}</td>
         <td className={`${s.left_align}`}  colSpan={2}>
             {el.name}
@@ -16,7 +17,7 @@ const TablelItem = ({currency,el}) => {
         ETH/BTC
         </td>
         <td className={`${s.rigth_align}`}>
-          {currencyHelper(currency, el.volumeUsd)}
+          {roundUpToB_M_T(roundUpToB_M_T_currency(currency, el.volumeUsd))}
         </td>
         <td className={`${s.rigth_align}`}>{Number(el.percentTotalVolume).toFixed(2)} %</td>
         <td className={`${s.rigth_align}`}>

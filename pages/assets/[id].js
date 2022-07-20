@@ -3,13 +3,13 @@ import { useEffect, useState } from "react";
 import { Layout } from "../../app/components/layout/Layout";
 import { AssetsCoin } from "../../app/components/screens/assetsCoin/AssetsCoin";
 import { Loader } from "../../app/components/ui/Loader";
-
 export default function Assets({ coin: serverCoin, history: serverHistory,markets:serverMarkets }) {
 
   const [history, setHistory] = useState(serverHistory);
   const [coin, setCoin] = useState(serverCoin);
   const [markets,setMarkets] = useState(serverMarkets)
   const router = useRouter();
+
   useEffect(() => {
     async function load() {
       const responseCoin = await fetch(
@@ -50,7 +50,10 @@ export default function Assets({ coin: serverCoin, history: serverHistory,market
   if (!coin || !history || !markets) {
     return (
       <Layout title="">
+     
         <Loader/>
+     
+        
       </Layout>
     );
   }

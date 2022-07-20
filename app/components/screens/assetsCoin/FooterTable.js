@@ -48,7 +48,8 @@ export const FooterTable = ({markets,settings}) => {
                </thead>
                <tbody>
                    {marketsFilter.map(el=>{
-                       return <FooterTableItem market={el} currency={currency}/>
+                    const key =  Date.now() * Math.random(1,10000)
+                       return <FooterTableItem key={key} market={el} currency={currency}/>
                    })}
                </tbody>
                <tfoot> 

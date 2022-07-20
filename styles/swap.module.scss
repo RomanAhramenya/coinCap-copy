@@ -211,6 +211,9 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        div{
+          cursor: pointer;
+        }
         .price {
           display: flex;
           align-items: center;
@@ -433,6 +436,23 @@ label{
     }
   }
 }
+.swap_page,.swap_page_Dark{
+  margin: 4em 0 0 0;
+  .swapDark,.swap {
+    .swap_container{
+      box-shadow:rgb(0 0 0) 0px 0px 9px !important;
+    }
+  }
+}
+.swap_page_Dark{
+  background-color: rgb(54, 54, 54);
+  .price{
+    color:white !important
+  }
+  .token_list{
+    color:white !important;
+  }
+}
 .swapDark {
 
   .show_container{
@@ -500,5 +520,10 @@ label{
   }
   100%{
     left:29px;
+  }
+}
+@media only screen and (max-width: 767px){
+  .swap_page,.swap_page_Dark{
+    margin: 4em -1em 0 0 !important
   }
 }

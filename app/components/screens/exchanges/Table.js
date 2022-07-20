@@ -61,7 +61,8 @@ const Table = ({language,currency,isThemeDark}) => {
           </thead>
           <tbody>
           {exchangesFilter.map(el=>{
-                       return <TablelItem el={el} currency={currency}/>
+            const key =  Date.now() * Math.random(1,10000)
+                       return <TablelItem key={key} el={el} currency={currency}/>
                    })}
           </tbody>
           <tfoot></tfoot>
