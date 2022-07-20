@@ -4,6 +4,7 @@ import { Loader } from '../../../ui/Loader';
 import image from './../../../../assets/image/close.png'
 import s from './../../../../../styles/swap.module.scss'
 import Image from 'next/image';
+import { Button } from '../../../ui/Button';
 export const SwapSettings = ({
     exchanges:serverExchanges,
     language,
@@ -12,6 +13,16 @@ export const SwapSettings = ({
     const  [exchanges,setExchanges] = useState(serverExchanges)
     const [rateValue,setRateValue] = useState(1)
     const [RadioValue,setRadioValue] = useState(false)
+    const [selectExchanges,setSelectExchanges] = useState({})
+    let textExchanges =  Object.values(selectExchanges).filter(el => el.isSelect === true)
+    function toggleAll () {
+      let a={}
+       Object.values(selectExchanges).map((el,index)=> {
+        console.log(el)
+        a[index] = {name:el.name,isSelect:true}
+      })
+      setSelectExchanges(a)
+    }
     useEffect(()=>{
         async function load() {
             const responseExchanges = await fetch(
@@ -21,7 +32,11 @@ export const SwapSettings = ({
               });
               const exchanges = await responseExchanges;
               setExchanges(exchanges.data);
-           
+              let a={}
+              exchanges.data.map((ex,index)=>{
+                a[index] = {name:ex.exchangeId,isSelect:true}
+              })
+              setSelectExchanges(a)
             }
             if (!serverExchanges) {
                 load();
@@ -30,7 +45,6 @@ export const SwapSettings = ({
     if (!exchanges) {
         return   <div className={s.show_container}> <Loader/></div> 
       }
-      console.log(exchanges)
   return (
     <div className={s.show_container}>
           <div className={s.header_show}>
@@ -55,6 +69,25 @@ export const SwapSettings = ({
                 </div>
             </div>
         </div>
+        <div className={s.section_exchanges_settings}>
+          <span>Exchages({textExchanges.length})</span>
+          <Button action={toggleAll} language={language} en='Toggle All' ru='Выбрать все'/>
+        </div>
+       <div className={s.section_exchanges_all}>
+            {Object.values(selectExchanges).map((el,index)=>{ 
+              function changeHandler() {
+               const updatedValue = {...selectExchanges}
+                updatedValue[index].isSelect = !updatedValue[index].isSelect
+                setSelectExchanges(updatedValue)
+              }
+      
+             
+                 return <div className={s.section_exchanges_item} key={el.exchangeId}>
+                        <input onChange={changeHandler} checked={selectExchanges[index].isSelect} id={el.name} type='checkbox'/>
+                        <label htmlFor={el.name}>{el.name}</label>
+                </div>
+            })}
+        </div> 
     </div>
   )
 }

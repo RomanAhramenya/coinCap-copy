@@ -5,7 +5,6 @@ import { translate } from "../../assets/helpers/settings";
 import s from "./../../../styles/button.module.scss";
 export const Button = ({ en, ru, action, isLoading = false ,disabled=false}) => {
   const language = useSelector((state) => state.settings.language);
-  console.log(disabled)
   return (
     <div className={s.container}>
       {isLoading ? (
