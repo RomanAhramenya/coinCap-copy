@@ -8,7 +8,7 @@ const ExchangesId = ({data}) => {
    const settings = useSelector((state) => state.settings);
   return (
     <div className={settings.isThemeDark ? s.headerDark : s.header}>
-    <div className={s.container}>
+    <div style={{paddingBottom:'25em'}} className={s.container}>
       <div className={s.left_header}>
         <div className={s.left_header_container}>
           <div className={s.left_header_rank}>

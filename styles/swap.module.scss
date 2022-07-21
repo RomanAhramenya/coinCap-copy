@@ -437,7 +437,7 @@ label{
   }
 }
 .swap_page,.swap_page_Dark{
-  margin: 4em 0 0 0;
+  margin: 4em   0 0 0;
   .swapDark,.swap {
     .swap_container{
       box-shadow:rgb(0 0 0) 0px 0px 9px !important;
@@ -524,6 +524,6 @@ label{
 }
 @media only screen and (max-width: 767px){
   .swap_page,.swap_page_Dark{
-    margin: 4em -1em 0 0 !important
+    margin: 4em -0.3em 0 0 !important
   }
 }

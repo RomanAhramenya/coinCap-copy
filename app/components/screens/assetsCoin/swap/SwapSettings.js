@@ -93,8 +93,8 @@ export const SwapSettings = ({
                 setSelectExchanges(updatedValue)
               }
       
-             
-                 return <div className={s.section_exchanges_item} key={el.exchangeId}>
+              let key = Date.now() 
+                 return <div key={key * Math.random(10000)} className={s.section_exchanges_item} >
                         <input onChange={changeHandler} checked={selectExchanges[index].isSelect} id={el.name} type='checkbox'/>
                         <label htmlFor={el.name}>{el.name}</label>
                 </div>

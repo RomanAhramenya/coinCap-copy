@@ -67,7 +67,7 @@ const Table = ({language,currency,isThemeDark}) => {
           </tbody>
           <tfoot></tfoot>
         </table>
-        <div className={s.button_main}>
+        <div style={{padding:'2em'}} className={s.button_main}>
                 <Button disabled={isDisabled}  action={showMoreHandler}  en='View More' ru='Показать больше'/>
            </div>
       </div>

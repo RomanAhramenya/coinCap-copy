@@ -137,10 +137,10 @@
   }
 }
 .container_footer_markets_table{
-  
   .container,
 .containerDark {
-  top: 3em;
+padding-top: 1em ;
+  top:0;
   table{
     line-height: 3 !important;
    .left_align{
@@ -257,6 +257,9 @@
         &:nth-child(2),&:nth-child(3),&:nth-child(5){
           display: table-cell !important
         }
+        &:nth-child(5){
+          padding-right: 1em;
+        }
       }
     }
   }
@@ -267,6 +270,9 @@
       }
       &:nth-child(2),&:nth-child(3),&:nth-child(5){
         display: table-cell !important
+      }
+      &:nth-child(5){
+        padding-right: 1em;
       }
     }
 
