@@ -33,7 +33,7 @@ export default function Ex ({ exchanges:server}) {
     console.log(exchanges)
 return (
   <Layout title={router.query.id}>
-    <ExchangesId/>
+    <ExchangesId data={exchanges.data}/>
   </Layout>
 );
 }

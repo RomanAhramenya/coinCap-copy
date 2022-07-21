@@ -63,7 +63,7 @@ export const Tablecoins = ({language,currency,isThemeDark}) => {
             <tfoot> 
             </tfoot>
         </table>} 
-        <div className={s.button_main}>
+        <div style={{padding:'2em'}} className={s.button_main}>
              <Button isLoading={isLoading}  action={showMoreHandler}  en='View More' ru='Показать больше'/>
         </div>
        

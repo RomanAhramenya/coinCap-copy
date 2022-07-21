@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useSelector } from "react-redux";
 import { FooterTable } from "./FooterTable";
 import HeaderAssetsCoin from "./HeaderAssetsCoin";

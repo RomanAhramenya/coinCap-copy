@@ -2,6 +2,7 @@ import Head from 'next/head'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setIsCurrency, setIsLanguage, setIsTheme } from '../../store/slice/settingsSlice'
+import Footer from '../Footer'
 import SettingsPage from '../ui/setttingsPage/SettingsPage'
 import FavIcon from './../../assets/image/favicon.ico'
 import { Header } from './../Header'
@@ -38,6 +39,7 @@ export const Layout = ({children,title}) => {
        {isSetting && <SettingsPage settings={settings}/>} 
         <Header settings={settings}/>
        {children} 
+       <Footer settings={settings}/>
     </div>
     </>
  
