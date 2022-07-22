@@ -8,7 +8,7 @@ export default function Swap  ()  {
   
   return (
     <Layout title={'Swap'}>
-    <div className={isThemeDark ? s.swap_page_Dark : s.swap_page}>
+    <div  className={isThemeDark ? s.swap_page_Dark : s.swap_page}>
        
               <SwapAssetsCoin btc='btc' btcPrice='20000' isThemeDark={isThemeDark} language={language}/>
         

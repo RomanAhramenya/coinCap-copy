@@ -17,7 +17,7 @@ export const AssetsCoin = ({ coin, history,markets }) => {
   } = coin.data;
   const settings = useSelector((state) => state.settings);
   return (
-    <div>
+    <>
       <HeaderAssetsCoin
         rank={rank}
         changePercent24Hr={changePercent24Hr}
@@ -36,6 +36,6 @@ export const AssetsCoin = ({ coin, history,markets }) => {
         settings={settings}
       />
       <FooterTable settings={settings} markets={markets.data}/>
-    </div>
+    </>
   );
 };
