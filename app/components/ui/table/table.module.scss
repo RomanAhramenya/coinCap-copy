@@ -160,11 +160,18 @@ $backgroundDark: rgb(54, 54, 54);
  
   }
   .coins{
+
     th{
       @include dn_coins
     }
     td{
       @include dn_coins
+    }
+    .table_info_coin{
+      td{
+         display: table-cell !important;
+      }
+     
     }
 }
 .exchangeCoins{
