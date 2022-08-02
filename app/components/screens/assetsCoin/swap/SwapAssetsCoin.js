@@ -28,7 +28,7 @@ export const SwapAssetsCoin = ({ btc, btcPrice, isThemeDark, language }) => {
       (Number(valueInputFirst) * Number(imageFirst.price)) /
         Number(imageSecond.price)
     );
-  }, [valueInputFirst]);
+  }, [valueInputFirst,imageFirst.price,imageSecond.price]);
   function reverceCoin() {
     setImageFirst(imageSecond);
     setImageSecond(imageFirst);

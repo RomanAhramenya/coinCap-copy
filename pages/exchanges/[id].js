@@ -23,10 +23,33 @@ export default function Ex ({ exchanges:server}) {
         }
   },[])
 
-  if (!exchanges) {
+  if (!exchanges ) {
       return (
         <Layout title="">
           <Loader/>
+        </Layout>
+      );
+    }
+    if (exchanges.error ) {
+      return (
+        <Layout title="">
+          <div style={{
+            width:'100',
+            height:'25em',
+            display:'flex',
+            flexDirection:'column',
+            alignItems:'center',
+            justifyContent:'center',
+            backgroundColor:'gray',
+            fontWeight:'900',
+            fontSize:'1.5em',
+            color:'red',
+            lineHeight:'2'
+
+          }}>!{exchanges.error.toUpperCase()}! <span style={{
+            color:'brown',
+            cursor:'pointer'
+          }} onClick={() => router.back()}>{'<- BACK'}</span></div>
         </Layout>
       );
     }

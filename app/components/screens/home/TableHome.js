@@ -19,10 +19,9 @@ export const TableHome = () => {
     ]
     const dispatch = useDispatch()
     useEffect(() => {
-        
-            dispatch(getCoins('0'))
-        
-    
+      if(coins.length === 0) {
+        dispatch(getCoins('0'))
+      }
    },[])
      useEffect(() => {
        

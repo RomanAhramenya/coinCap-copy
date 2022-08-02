@@ -2,7 +2,7 @@
 import { useSelector } from "react-redux";
 import { Layout } from "../../layout/Layout";
 import { MainStatisticsHeader } from "../../ui/mainStatisticsHeader/MainStatisticsHeader";
-import Table from "./Table";
+import TableExchanges from "./TableExchanges";
 
 export const Exchanges = () => {
   const settings = useSelector((state) => state.settings);
@@ -10,7 +10,7 @@ export const Exchanges = () => {
   return (
     <Layout title={'Exchanges'}>
     <MainStatisticsHeader currency={currency} isThemeDark={isThemeDark} language={language}/>
-    <Table currency={currency} isThemeDark={isThemeDark} language={language}/>
+    <TableExchanges currency={currency} isThemeDark={isThemeDark} language={language}/>
     </Layout>
    
   );

@@ -6,6 +6,7 @@ import s from './../../../../../styles/assetsCoin.module.scss'
 const ExchangesId = ({data}) => {
    const {name,exchangeUrl,rank,tradingPairs,volumeUsd} = data
    const settings = useSelector((state) => state.settings);
+   
   return (
     <div className={settings.isThemeDark ? s.headerDark : s.header}>
     <div style={{paddingBottom:'25em'}} className={s.container}>

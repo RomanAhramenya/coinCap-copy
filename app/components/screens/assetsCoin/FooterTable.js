@@ -1,13 +1,10 @@
 import { useState } from "react";
-import { translate } from "../../../assets/helpers/settings";
-import { Button } from "../../ui/Button";
 import Table from "../../ui/table/Table";
-import s from "./../../../../styles/tableCoins.module.scss";
+
 
 export const FooterTable = ({ markets, settings }) => {
   const [currentMarkets, setCurrentmarkets] = useState(20);
   const [isDisabled, setIsDisabled] = useState(false);
-  const { language, isThemeDark, currency } = settings;
   const filter = markets.filter((market) => market.volumePercent !== null);
   const marketsFilter = filter.slice(0, currentMarkets);
 
